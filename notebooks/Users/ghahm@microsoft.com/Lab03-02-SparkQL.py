@@ -88,12 +88,12 @@ resultDF.collect()
 
 # COMMAND ----------
 
-# MAGIC %sql
-# MAGIC SELECT UniqueCarrier, max(DepDelay) as maxDelayedTime
-# MAGIC FROM (
-# MAGIC        SELECT UniqueCarrier, DepDelay
-# MAGIC       FROM flightTable
-# MAGIC       WHERE DepDelay > 15
-# MAGIC ) d
-# MAGIC GROUP BY UniqueCarrier
-# MAGIC ORDER BY maxDelayedTime DESC
+%sql
+SELECT UniqueCarrier, max(DepDelay) as maxDelayedTime
+FROM (
+      SELECT UniqueCarrier, DepDelay
+      FROM flightTable
+      WHERE DepDelay > 15
+) d
+GROUP BY UniqueCarrier
+ORDER BY maxDelayedTime DESC
