@@ -12,8 +12,8 @@ usersDF1.write.mode("overwrite").saveAsTable("users") # Managed Overwrite
 
 # COMMAND ----------
 
-# MAGIC %sql
-# MAGIC select id, first_name, last_name, email, gender, ip_address from users order by id asc
+%sql
+select id, first_name, last_name, email, gender, ip_address from users order by id asc
 
 # COMMAND ----------
 
@@ -23,8 +23,8 @@ usersDF2.write.mode("append").saveAsTable("users") # Managed Overwrite
 
 # COMMAND ----------
 
-# MAGIC %sql
-# MAGIC select id, first_name, last_name, email, gender, ip_address from users order by id asc
+%sql
+select id, first_name, last_name, email, gender, ip_address from users order by id asc
 
 # COMMAND ----------
 
@@ -34,5 +34,5 @@ usersDF3.write.mode("append").saveAsTable("users") # Managed Overwrite
 
 # COMMAND ----------
 
-# MAGIC %sql
-# MAGIC select id, first_name, last_name, email, gender, ip_address from users order by id asc
+%sql
+select id, first_name, last_name, email, gender, ip_address from users order by id asc
