@@ -1,5 +1,5 @@
 # Databricks notebook source
-%md ##### 새로운 노트북을 열어서 실행해 보기
+#MAGIC %md ##### 새로운 노트북을 열어서 실행해 보기
 
 # COMMAND ----------
 
