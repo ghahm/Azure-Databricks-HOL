@@ -9,8 +9,8 @@
 
 # COMMAND ----------
 
-# MAGIC %sql
-# MAGIC select id, first_name, last_name, email, gender, ip_address from delta_df_users version as of 0
+%sql
+select id, first_name, last_name, email, gender, ip_address from delta_df_users version as of 0
 
 # COMMAND ----------
 
