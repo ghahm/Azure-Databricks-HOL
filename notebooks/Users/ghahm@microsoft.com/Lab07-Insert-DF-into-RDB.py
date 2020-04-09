@@ -11,11 +11,11 @@ testDF.collect()
 # COMMAND ----------
 
 # 1.2 SQL 서버 접속 정보 및 save mode 설정
-jdbcHostname = "otn20sqlsrv.database.windows.net"
-jdbcDatabase = "otn20sqldb"
+jdbcHostname = "<sql db host name>"
+jdbcDatabase = "<db name>"
 jdbcPort = 1433
-jdbcUsername = "adm1n"
-jdbcPassword = "!23456Asdfgh"
+jdbcUsername = "<db user>"
+jdbcPassword = "<db user password>"
 jdbcUrl = "jdbc:sqlserver://{0}:{1};database={2}".format(jdbcHostname, jdbcPort, jdbcDatabase)
 connectionProperties = {
   "user" : jdbcUsername,
