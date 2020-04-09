@@ -17,15 +17,15 @@ spark.sql("CREATE TABLE delta_df_users USING DELTA LOCATION '/mnt/demodata/delta
 
 # COMMAND ----------
 
-# MAGIC %sql
-# MAGIC select id, first_name, last_name, email, gender, ip_address from delta_df_users order by id asc
+%sql
+select id, first_name, last_name, email, gender, ip_address from delta_df_users order by id asc
 
 # COMMAND ----------
 
-# MAGIC %sql
-# MAGIC select id, first_name, last_name, email, gender, ip_address from delta.`/mnt/demodata/delta/users` order by id asc
+%sql
+select id, first_name, last_name, email, gender, ip_address from delta.`/mnt/demodata/delta/users` order by id asc
 
 # COMMAND ----------
 
-# MAGIC %sql
-# MAGIC drop table if exists delta_df_users
+#%sql
+#drop table if exists delta_df_users
