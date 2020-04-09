@@ -83,8 +83,8 @@ resultDF.collect()
 
 # COMMAND ----------
 
-# MAGIC %sql
-# MAGIC SELECT UniqueCarrier, count(UniqueCarrier) as cnt 
-# MAGIC FROM flightTable
-# MAGIC GROUP BY UniqueCarrier
-# MAGIC ORDER BY cnt DESC
+%sql
+SELECT UniqueCarrier, count(UniqueCarrier) as cnt 
+FROM flightTable
+GROUP BY UniqueCarrier
+ORDER BY cnt DESC
