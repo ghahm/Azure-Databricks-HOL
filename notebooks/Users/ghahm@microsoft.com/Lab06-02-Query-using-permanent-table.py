@@ -1,5 +1,5 @@
 # Databricks notebook source
-# MAGIC %md ##### 새로운 노트북을 열어서 실행해 보기
+%md ##### 새로운 노트북을 열어서 실행해 보기
 
 # COMMAND ----------
 
@@ -7,8 +7,8 @@
 
 # COMMAND ----------
 
-# MAGIC %sql
-# MAGIC show tables
+%sql
+show tables
 
 # COMMAND ----------
 
@@ -17,11 +17,11 @@
 
 # COMMAND ----------
 
-# MAGIC %sql
-# MAGIC SELECT UniqueCarrier, count(UniqueCarrier) as cnt 
-# MAGIC FROM flightdstable
-# MAGIC GROUP BY UniqueCarrier
-# MAGIC ORDER BY cnt DESC
+%sql
+SELECT UniqueCarrier, count(UniqueCarrier) as cnt 
+FROM flightdstable
+GROUP BY UniqueCarrier
+ORDER BY cnt DESC
 
 # COMMAND ----------
 
@@ -30,8 +30,8 @@
 
 # COMMAND ----------
 
-# MAGIC %sql
-# MAGIC SELECT UniqueCarrier, count(UniqueCarrier) as cnt 
-# MAGIC FROM flightTable
-# MAGIC GROUP BY UniqueCarrier
-# MAGIC ORDER BY cnt DESC
+%sql
+SELECT UniqueCarrier, count(UniqueCarrier) as cnt 
+FROM flightTable
+GROUP BY UniqueCarrier
+ORDER BY cnt DESC
