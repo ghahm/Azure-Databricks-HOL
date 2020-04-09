@@ -28,9 +28,9 @@
 
 configs = {"fs.azure.account.auth.type": "OAuth",
            "fs.azure.account.oauth.provider.type": "org.apache.hadoop.fs.azurebfs.oauth2.ClientCredsTokenProvider",
-           "fs.azure.account.oauth2.client.id": "bc2defbd-3e5c-410d-99b3-258b8666a6a6",
-           "fs.azure.account.oauth2.client.secret": dbutils.secrets.get(scope = "adlsgen2krc", key = "adlsgen2krc-client-credential"),
-           "fs.azure.account.oauth2.client.endpoint": "https://login.microsoftonline.com/72f988bf-86f1-41af-91ab-2d7cd011db47/oauth2/token"}
+           "fs.azure.account.oauth2.client.id": "<application-id>",
+           "fs.azure.account.oauth2.client.secret": dbutils.secrets.get(scope = "<scope-name>", key = "<key-name-for-service-credential>"),
+           "fs.azure.account.oauth2.client.endpoint": "https://login.microsoftonline.com/<directory-id>/oauth2/token"}
 
 # Optionally, you can add <directory-name> to the source URI of your mount point.
 dbutils.fs.mount(
