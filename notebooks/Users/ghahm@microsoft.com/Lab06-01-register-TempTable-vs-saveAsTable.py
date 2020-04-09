@@ -70,8 +70,8 @@ flightDF.registerTempTable("flightTable")# 1.3 Table 현황 조회 (Temporary �
 
 # COMMAND ----------
 
-# MAGIC %sql
-# MAGIC show tables
+%sql
+show tables
 
 # COMMAND ----------
 
@@ -79,11 +79,11 @@ flightDF.registerTempTable("flightTable")# 1.3 Table 현황 조회 (Temporary �
 
 # COMMAND ----------
 
-# MAGIC %sql
-# MAGIC SELECT UniqueCarrier, count(UniqueCarrier) as cnt 
-# MAGIC FROM flightTable
-# MAGIC GROUP BY UniqueCarrier
-# MAGIC ORDER BY cnt DESC
+%sql
+SELECT UniqueCarrier, count(UniqueCarrier) as cnt 
+FROM flightTable
+GROUP BY UniqueCarrier
+ORDER BY cnt DESC
 
 # COMMAND ----------
 
@@ -96,8 +96,8 @@ flightDF.write.saveAsTable("flightDSTable")
 
 # COMMAND ----------
 
-# MAGIC %sql
-# MAGIC show tables
+%sql
+show tables
 
 # COMMAND ----------
 
@@ -105,11 +105,11 @@ flightDF.write.saveAsTable("flightDSTable")
 
 # COMMAND ----------
 
-# MAGIC %sql
-# MAGIC SELECT UniqueCarrier, count(UniqueCarrier) as cnt 
-# MAGIC FROM flightdstable
-# MAGIC GROUP BY UniqueCarrier
-# MAGIC ORDER BY cnt DESC
+%sql
+SELECT UniqueCarrier, count(UniqueCarrier) as cnt 
+FROM flightdstable
+GROUP BY UniqueCarrier
+ORDER BY cnt DESC
 
 # COMMAND ----------
 
