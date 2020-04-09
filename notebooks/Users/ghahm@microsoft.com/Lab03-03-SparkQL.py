@@ -75,15 +75,15 @@ flightDF.take(5)
 
 # COMMAND ----------
 
-# MAGIC %sql
-# MAGIC SELECT TailNum, count(TailNum) as cnt 
-# MAGIC FROM ( 
-# MAGIC     SELECT TailNum 
-# MAGIC     FROM flightTable 
-# MAGIC     WHERE Distance > 1500 
-# MAGIC ) longDist 
-# MAGIC GROUP BY TailNum
-# MAGIC ORDER BY cnt DESC
+%sql
+SELECT TailNum, count(TailNum) as cnt 
+FROM ( 
+    SELECT TailNum 
+    FROM flightTable 
+    WHERE Distance > 1500 
+) longDist 
+GROUP BY TailNum
+ORDER BY cnt DESC
 
 # COMMAND ----------
 
