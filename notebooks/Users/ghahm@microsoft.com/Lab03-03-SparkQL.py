@@ -122,19 +122,19 @@ planeDataDF.take(5)
 
 # COMMAND ----------
 
-# MAGIC %sql
-# MAGIC SELECT planeDataTable.Model, sum(cnt) as sumofcnt
-# MAGIC FROM ( 
-# MAGIC     SELECT longDist.TailNum, count(longDist.TailNum) as cnt
-# MAGIC     FROM (
-# MAGIC         SELECT flightTable.TailNum
-# MAGIC         FROM flightTable
-# MAGIC         WHERE Distance > 1500
-# MAGIC     ) longDist
-# MAGIC     GROUP BY longDist.TailNum
-# MAGIC     ORDER BY cnt DESC
-# MAGIC ) longDistanceFlight
-# MAGIC INNER JOIN planeDataTable
-# MAGIC ON longDistanceFlight.TailNum=planeDataTable.Tailnum
-# MAGIC GROUP BY planeDataTable.Model
-# MAGIC ORDER BY sumofcnt DESC
+%sql
+SELECT planeDataTable.Model, sum(cnt) as sumofcnt
+FROM ( 
+     SELECT longDist.TailNum, count(longDist.TailNum) as cnt
+     FROM (
+         SELECT flightTable.TailNum
+         FROM flightTable
+         WHERE Distance > 1500
+     ) longDist
+     GROUP BY longDist.TailNum
+     ORDER BY cnt DESC
+ ) longDistanceFlight
+ INNER JOIN planeDataTable
+ ON longDistanceFlight.TailNum=planeDataTable.Tailnum
+ GROUP BY planeDataTable.Model
+ ORDER BY sumofcnt DESC
