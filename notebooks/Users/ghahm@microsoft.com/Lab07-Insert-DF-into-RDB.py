@@ -56,3 +56,11 @@ display(df)
 pushdown_query = "(SELECT * FROM DfTest) sample_alias"
 df = spark.read.jdbc(url=jdbcUrl, table=pushdown_query, properties=connectionProperties)
 display(df)
+
+# <참고- SQL DB에서 테스트용 테이블 생성을 위한 >
+CREATE TABLE DfTest(
+Date datetime NOT NULL,
+UserID varchar(100) NOT NULL,
+DailyUserLoginCnt int NOT NULL, 
+CONSTRAINT DfTest_PK PRIMARY KEY (UserID)
+)
