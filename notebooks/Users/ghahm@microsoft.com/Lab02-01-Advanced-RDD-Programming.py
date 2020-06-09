@@ -16,7 +16,7 @@ carrierRdd.take(10)
 # COMMAND ----------
 
 # 1.3. carrierRdd의 각 Key 별로 aggregation을 수행하여 각 단어의 개수 계산하기
-carrierRdd = carrierRdd.reduceByKey(lambda a, b: a+b)o
+carrierRdd = carrierRdd.reduceByKey(lambda a, b: a+b)
 carrierRdd.take(10)
 
 # COMMAND ----------
