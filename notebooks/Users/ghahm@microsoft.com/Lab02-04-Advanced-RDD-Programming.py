@@ -29,7 +29,8 @@ ordersRdd3.count()
 
 # COMMAND ----------
 
-# Spark Web UI의 Stage 메뉴에서 task 개수를 참고하여 파티션 수 확인 -> 총 파일 수 : 1.6 MB 파일 7개 & 164 MB 1개 --> RDD 파티션 9개 (1.6 MB 7개와 128 MB + 32MB 2개로 나뉘어짐어짐) 
+# Spark Web UI의 Stage 메뉴에서 task 개수를 참고하여 파티션 수 확인 -> 총 파일 수 : 1.6 MB 파일 7개 & 164 MB 1개 --> RDD 파티션 9개 (1.6 MB 7개와 128 MB + 32MB 2개로 나뉘어짐) 
+# (실제 Spark Web UI의 Tasks 별 Input Size를 보면 128MB와는 약간의 차이가 있을 수 있음)
 ordersRdd4=spark.sparkContext.textFile("/mnt/demodata/sparkhol/rdd-partition-data/ordersTbls/*/orders.tbl").map(lambda line: line.split("|")) 
 ordersRdd4.getNumPartitions()
 
@@ -45,4 +46,5 @@ ordersRdd4.count()
 
 # COMMAND ----------
 
+# cache 이전의 count() 실행 시간과 cache 이후의 count() 실행 시간 비교해 볼 것
 ordersRdd4.count()
