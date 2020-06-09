@@ -44,7 +44,7 @@ select id, first_name, last_name, email, gender, ip_address from users order by 
 # 4.을 igngore로 변경하여 다시 실행해 보고 select를 실행한 데이터 결과 비교 --> error와의 차이 (exception 처리)
 
 # 참고 : http://spark.apache.org/docs/latest/api/python/pyspark.sql.html?highlight=jdbc#pyspark.sql.DataFrameWriter.mode
-# 
+# Lab07의 jdbc save 모드와는 약간 차이가 있음 (PK의 존재 여부에 따른 것으로 보임)
 # append: Append contents of this DataFrame to existing data.
 # overwrite: Overwrite existing data.
 # error: Throw an exception if data already exists.
