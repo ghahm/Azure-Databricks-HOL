@@ -32,7 +32,7 @@ connectionProperties = {
 # (1) append : Append contents of this DataFrame to existing data (Primary key의 Dup이 없는 레코드만 정상 insert되고 나머지는 Exception Throw)
 # (2) overwrite : Overwrite existing data (반드시 주의 : DB 레코드 중 DF와 Mapping 되는 레코드만 overwirte하는게 아니라 전체 테이블을 DF로 바꿔침)
 # (3) ignore : Silently ignore this operation if data already exists (Primary key의 Dup이 있으면 1개도 insert되지 않고 Exception은 Throw 안함.)
-# (4) error (default case): Throw an exception if data already exists (테이블이 있으면 Exception을 Throw하고 없으면 디폴드로 생성)
+# (4) error (default case): Throw an exception if data already exists (ignore의 액션과 동일하지만 ignore와는 다르게 Exception을 Throw)
 save_mode = "append"
 #save_mode = "overwrite"
 #save_mode = "ignore"
