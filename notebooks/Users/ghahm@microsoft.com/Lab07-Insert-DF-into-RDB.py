@@ -1,7 +1,8 @@
 # Databricks notebook source
 # 사전 준비 사항
 # (1) Azure SQL DB 생성
-# (2) DB 내에 'DfTest' 테이블 생성 (쿼리는 맨 아래 참조)
+# (2) Azure SQL 서버의 방화벽에서 '퍼블릭 네트워크 액세스 거부'를 아니요로 하고 테스트할 것
+# (3) DB 내에 'DfTest' 테이블 생성 (쿼리는 맨 아래 참조)
 from pyspark.sql import Row
 
 # 1.1 샘플 데이터를 이용하여 테스트용 Dataframe 생성하기
