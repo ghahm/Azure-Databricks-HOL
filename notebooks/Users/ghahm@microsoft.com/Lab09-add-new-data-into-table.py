@@ -36,3 +36,16 @@ usersDF3.write.mode("append").saveAsTable("users") # Managed Overwrite
 
 %sql
 select id, first_name, last_name, email, gender, ip_address from users order by id asc
+
+# 추가 테스트
+# 4.을 overwrite로 변경하여 다시 실행해 보고 select를 실행한 데이터 결과 비교 --> overwrite의 결과 (DF을 기준으로 action이 실행됨을 기억할 것)
+# 4.을 overwrite로 변경하여 다시 실행해 보고 select를 실행한 데이터 결과 비교 --> 동일한 데이터를 append 했을 때의 결과
+# 4.을 error로 변경하여 다시 실행해 보고 select를 실행한 데이터 결과 비교
+# 4.을 igngore로 변경하여 다시 실행해 보고 select를 실행한 데이터 결과 비교 --> error와의 차이 (exception 처리)
+
+# 참고 : http://spark.apache.org/docs/latest/api/python/pyspark.sql.html?highlight=jdbc#pyspark.sql.DataFrameWriter.mode
+# 
+# append: Append contents of this DataFrame to existing data.
+# overwrite: Overwrite existing data.
+# error: Throw an exception if data already exists.
+# ignore: Silently ignore this operation if data already exists.
