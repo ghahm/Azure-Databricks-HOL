@@ -29,7 +29,7 @@ ordersRdd3.count()
 
 # COMMAND ----------
 
-# Spark Web UI의 Stage 메뉴에서 task 개수를 참고하여 파티션 수 확인 -> 총 파일 수 : 1.6 MB 파일 7개 & 164 MB 1개 --> RDD 파티션 9개
+# Spark Web UI의 Stage 메뉴에서 task 개수를 참고하여 파티션 수 확인 -> 총 파일 수 : 1.6 MB 파일 7개 & 164 MB 1개 --> RDD 파티션 9개 (1.6 MB 7개와 128 MB + 32MB 2개로 나뉘어짐어짐) 
 ordersRdd4=spark.sparkContext.textFile("/mnt/demodata/sparkhol/rdd-partition-data/ordersTbls/*/orders.tbl").map(lambda line: line.split("|")) 
 ordersRdd4.getNumPartitions()
 
