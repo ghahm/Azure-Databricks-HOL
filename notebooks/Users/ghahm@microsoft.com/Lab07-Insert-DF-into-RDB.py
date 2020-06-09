@@ -29,7 +29,7 @@ connectionProperties = {
 
 # COMMAND ----------
 
-# save mode 참고 사항 ( http://spark.apache.org/docs/1.6.2/api/python/pyspark.sql.html?highlight=jdbc#pyspark.sql.DataFrameWriter.jdbc 참조 )
+# save mode 참고 사항 ( http://spark.apache.org/docs/latest/api/python/pyspark.sql.html?highlight=jdbc#pyspark.sql.DataFrameWriter.jdbc 참조 )
 # (1) append : Append contents of this DataFrame to existing data (Primary key의 Dup이 없는 레코드만 정상 insert되고 나머지는 Exception Throw)
 # (2) overwrite : Overwrite existing data (반드시 주의 : DB 레코드 중 DF와 Mapping 되는 레코드만 overwirte하는게 아니라 전체 테이블을 DF로 바꿔침)
 # (3) ignore : Silently ignore this operation if data already exists (Primary key의 Dup이 있으면 1개도 insert되지 않고 Exception은 Throw 안함.)
