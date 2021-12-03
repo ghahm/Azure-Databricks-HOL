@@ -49,6 +49,22 @@ df = spark.read.text("/mnt/demodata/sparkhol/flight-data/flights.csv")
 
 # COMMAND ----------
 
+df.printSchema()
+
+# COMMAND ----------
+
+df.take(1)
+
+# COMMAND ----------
+
+df = spark.read.format("csv").load("/mnt/demodata/sparkhol/flight-data/flights.csv")
+
+# COMMAND ----------
+
+df.printSchema()
+
+# COMMAND ----------
+
 df.take(1)
 
 # COMMAND ----------
