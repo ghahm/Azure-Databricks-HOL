@@ -1,6 +1,6 @@
 # Databricks notebook source
   # Spark Web UI의 Stage 메뉴에서 task 개수를 참고하여 파티션 수 확인 -> 총 파일 수 : 1.6 MB 파일 1개  --> RDD 파티션 2개
-ordersRdd1=spark.sparkContext.textFile("/mnt/demodata/sparkhol/rdd-partition-data/ordersTbls/small-1/orders.tbl").map(lambda line: line.split("|")) 
+ordersRdd1=sc.textFile("/mnt/demodata/sparkhol/rdd-partition-data/ordersTbls/small-1/orders.tbl").map(lambda line: line.split("|")) 
 ordersRdd1.getNumPartitions()
 
 # COMMAND ----------
