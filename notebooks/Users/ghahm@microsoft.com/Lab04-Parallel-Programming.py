@@ -12,7 +12,7 @@ flightsKVRdd.getNumPartitions() # flightRdd.getNumPartitions()의 파티션 결�
 # COMMAND ----------
 
 # 3. 추가 RDD 생성
-carrierRdd = spark.sparkContext.textFile("/mnt/demodata/sparkhol/flight-data/carriers.csv"). \
+carrierRdd = sc.textFile("abfss://demodata@ghadlskrc.dfs.core.windows.net/sparkhol/flight-data/carriers.csv"). \
                     map(lambda line: line.split(",")). \
                     map(lambda line: (line[0], line[1]))
 
