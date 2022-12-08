@@ -1,0 +1,6 @@
+%md
+## (참고 링크) https://learn.microsoft.com/ko-kr/azure/databricks/external-data/synapse-analytics#global-hadoop-configuration
+
+sc._jsc.hadoopConfiguration().set(
+  "fs.azure.account.key.<your-storage-account-name>.dfs.core.windows.net",
+  "<your-storage-account-access-key>")
