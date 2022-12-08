@@ -4,7 +4,7 @@
 # COMMAND ----------
 
 # 2.1 RDD 생성하고 자료 조회하기
-flightRdd = spark.sparkContext.textFile("/mnt/demodata/sparkhol/flight-data/flights.csv").map(lambda line: line.split(",")) 
+flightRdd = sc.textFile("/mnt/demodata/sparkhol/flight-data/flights.csv").map(lambda line: line.split(",")) 
 #flightRdd.take(1)
 flightRdd.count()
 
