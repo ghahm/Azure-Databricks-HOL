@@ -1,7 +1,7 @@
 # Databricks notebook source
 # MAGIC %md 
 # MAGIC ##### [노트북 사용] https://docs.microsoft.com/ko-kr/azure/databricks/notebooks/notebooks-use
-# MAGIC ##### [mount 가이드] https://learn.microsoft.com/en-us/azure/databricks/dbfs/mounts
+# MAGIC ##### [mount 가이드] https://learn.microsoft.com/en-us/azure/databricks/dbfs/mounts (아래 내용이 최신 Update와 차이가 날 수 있기 때문에 최신 정보는 링크를 참조)
 
 # COMMAND ----------
 
