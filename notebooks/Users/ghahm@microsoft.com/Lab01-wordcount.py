@@ -6,7 +6,7 @@
 # 1. RDD 생성하고 자료 조회하기
 # [참고] https://spark.apache.org/docs/3.1.1/api/python/reference/api/pyspark.SparkContext.html#pyspark.SparkContext
 # baseRdd = sc.textFile("/mnt/demodata/sparkhol/wordcount-data/Harry-Potter-and-the-Sorcerer.txt")
-baseRdd = sc.textFile("abfss://demodata@ghadlskrc.dfs.core.windows.net")
+baseRdd = sc.textFile("abfss://demodata@ghadlskrc.dfs.core.windows.net/sparkhol/wordcount-data/Harry-Potter-and-the-Sorcerer.txt")
 baseRdd.take(3) # 첫번째 행 return
 #baseRdd.collect() # 전체 데이터 return
 
