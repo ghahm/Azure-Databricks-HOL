@@ -1,6 +1,6 @@
 # Databricks notebook source
 # 1. RDD 생성
-flightRdd = spark.sparkContext.textFile("/mnt/demodata/sparkhol/flight-data/flights.csv").map(lambda line: line.split(",")) 
+flightRdd = sc.textFile("abfss://demodata@ghadlskrc.dfs.core.windows.net/sparkhol/flight-data/flights.csv").map(lambda line: line.split(",")) 
 flightRdd.getNumPartitions()
 
 # COMMAND ----------
