@@ -65,7 +65,7 @@ flightDF = sqlContext.createDataFrame(flightParsing, flightSchema)
 # COMMAND ----------
 
 # 쿼리 수행을 위하여 DataFrame을 임시 테이블로 등록
-flightDF.registerTempTable("flightTable")
+flightDF.createOrReplaceTempView("flightTable")
 
 #flightDF.collect()
 flightDF.take(5)
@@ -113,7 +113,7 @@ planeDataParsing = planeDataRDD.map(lambda s:(str(s[0]), \
 planeDataDF = sqlContext.createDataFrame(planeDataParsing, planeDataSchema)
 
 # 쿼리 수행을 위하여 DataFrame을 임시 테이블로 등록
-planeDataDF.registerTempTable("planeDataTable")
+planeDataDF.createOrReplaceTempView("planeDataTable")
 
 #planeDataDF.collect()
 planeDataDF.take(5)
