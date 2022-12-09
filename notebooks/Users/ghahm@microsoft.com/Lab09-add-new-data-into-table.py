@@ -1,6 +1,7 @@
 # Databricks notebook source
 # 1. 1번 데이터 파일을 읽어 Dataframe 생성하고 자료 조회하기
-usersDF1 = spark.read.option("multiline", "true").json("/mnt/demodata/sparkhol/json-data/users01.json.gz")
+#usersDF1 = spark.read.option("multiline", "true").json("/mnt/demodata/sparkhol/json-data/users01.json.gz")
+usersDF1 = spark.read.option("multiline", "true").json("abfss://demodata@ghadlskrc.dfs.core.windows.net/sparkhol/json-data/users01.json.gz")
 usersDF1.printSchema()
 usersDF1.show()
 
