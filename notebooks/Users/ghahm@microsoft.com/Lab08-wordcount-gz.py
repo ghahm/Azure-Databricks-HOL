@@ -4,7 +4,8 @@
 # COMMAND ----------
 
 # 1. RDD 생성하고 자료 조회하기
-baseRdd = spark.sparkContext.textFile("/mnt/demodata/sparkhol/wordcount-data/Harry-Potter-and-the-Sorcerer.txt.gz")
+#baseRdd = spark.sparkContext.textFile("/mnt/demodata/sparkhol/wordcount-data/Harry-Potter-and-the-Sorcerer.txt.gz")
+baseRdd = sc.textFile("abfss://demodata@ghadlskrc.dfs.core.windows.net/sparkhol/wordcount-data/Harry-Potter-and-the-Sorcerer.txt.gz")
 baseRdd.take(3) # 첫번째 행 return
 #baseRdd.collect() # 전체 데이터 return
 
