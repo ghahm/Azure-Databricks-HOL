@@ -89,7 +89,8 @@ ORDER BY cnt DESC
 # COMMAND ----------
 
 # 3.4 PlaneDataRDD 생성 -> 헤더 행 필터링 & split -> 각 plane 행의 정보가 부족할 경우 필터링 -> TailNum & Model return
-planeDataRDD=spark.sparkContext.textFile("/mnt/demodata/sparkhol/flight-data/plane-data.csv")
+#planeDataRDD=sc.textFile("/mnt/demodata/sparkhol/flight-data/plane-data.csv")
+planeDataRDD=sc.textFile("abfss://demodata@ghadlskrc.dfs.core.windows.net/sparkhol/flight-data/plane-data.csv")
 header = planeDataRDD.first() #extract header
 planeDataRDD = planeDataRDD.filter(lambda x:x !=header). \
                                             map(lambda line: line.split(",")) # filter header & split
