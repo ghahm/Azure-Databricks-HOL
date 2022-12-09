@@ -2,10 +2,10 @@
 from pyspark import StorageLevel
 
 # 1. RDD 생성하고 join하기
-flightRdd=spark.sparkContext.textFile("/mnt/demodata/sparkhol/flight-data/flights.csv"). \
+flightRdd = sc.textFile("abfss://demodata@ghadlskrc.dfs.core.windows.net/sparkhol/flight-data/flights.csv"). \
                     map(lambda line: line.split(",")). \
                     keyBy(lambda line: (line[5]))
-carrierRdd = spark.sparkContext.textFile("/mnt/demodata/sparkhol/flight-data/carriers.csv"). \
+carrierRdd = sc.textFile("abfss://demodata@ghadlskrc.dfs.core.windows.net/sparkhol/flight-data/carriers.csv"). \
                     map(lambda line: line.split(",")). \
                     map(lambda line: (line[0], line[1]))
 joinedRdd = flightRdd.join(carrierRdd)
