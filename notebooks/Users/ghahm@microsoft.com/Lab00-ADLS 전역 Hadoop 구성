@@ -4,3 +4,8 @@
 sc._jsc.hadoopConfiguration().set(
   "fs.azure.account.key.<your-storage-account-name>.dfs.core.windows.net",
   "<your-storage-account-access-key>")
+
+# COMMAND ----------
+
+baseRdd = sc.textFile("abfss://demodata@ghadlskrc.dfs.core.windows.net/sparkhol/wordcount-data/Harry-Potter-and-the-Sorcerer.txt")
+baseRdd.take(3) # 첫번째 행 return
