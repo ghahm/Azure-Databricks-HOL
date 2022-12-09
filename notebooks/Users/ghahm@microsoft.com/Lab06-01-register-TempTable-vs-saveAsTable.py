@@ -62,7 +62,7 @@ flightParsing = flightRdd.map(lambda s:(str(s[0]), \
 flightDF = sqlContext.createDataFrame(flightParsing, flightSchema)
 
 # 쿼리 수행을 위하여 DataFrame을 임시 테이블로 등록
-flightDF.registerTempTable("flightTable")# 1.3 Table 현황 조회 (Temporary 테이블과 Permanent 테이블)
+flightDF.createOrReplaceTempView("flightTable")# 1.3 Table 현황 조회 (Temporary 테이블과 Permanent 테이블)
 
 # COMMAND ----------
 
