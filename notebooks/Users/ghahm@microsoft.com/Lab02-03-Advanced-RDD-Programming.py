@@ -29,7 +29,8 @@ longDistanceFlightRDD.take(10) # TailNum, 1,500 마일 이상 운항 횟수 (내
 # COMMAND ----------
 
 # 3.4 PlaneDataRDD 생성 -> 헤더 행 필터링 & split -> 각 plane 행의 정보가 부족할 경우 필터링 -> TailNum & Model return
-planeDataRDD=spark.sparkContext.textFile("/mnt/demodata/sparkhol/flight-data/plane-data.csv")
+#planeDataRDD=spark.sparkContext.textFile("/mnt/demodata/sparkhol/flight-data/plane-data.csv")
+planeDataRDD=spark.sparkContext.textFile("abfss://demodata@ghadlskrc.dfs.core.windows.net/sparkhol/flight-data/plane-data.csv")
 header = planeDataRDD.first() #extract header
 planeDataRDD = planeDataRDD.filter(lambda x:x !=header). \
                                             map(lambda line: line.split(",")) # filter header & split
