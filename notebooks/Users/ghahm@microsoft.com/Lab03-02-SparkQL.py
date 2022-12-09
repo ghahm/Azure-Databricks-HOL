@@ -65,7 +65,7 @@ flightDF = sqlContext.createDataFrame(flightParsing, flightSchema)
 # COMMAND ----------
 
 # 쿼리 수행을 위하여 DataFrame을 임시 테이블로 등록
-flightDF.registerTempTable("flightTable")
+flightDF.createOrReplaceTempView("flightTable")
 
 #flightDF.show()
 flightDF.take(5)
