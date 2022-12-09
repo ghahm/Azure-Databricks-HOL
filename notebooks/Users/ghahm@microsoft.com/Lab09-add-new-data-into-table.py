@@ -19,7 +19,8 @@ select id, first_name, last_name, email, gender, ip_address from users order by 
 # COMMAND ----------
 
 # 3. 2번 데이터 파일을 읽어 Dataframe 생성 --> 기존 테이블에 추가하기 (append)
-usersDF2 = spark.read.option("multiline", "true").json("/mnt/demodata/sparkhol/json-data/users02.json.gz")
+#usersDF2 = spark.read.option("multiline", "true").json("/mnt/demodata/sparkhol/json-data/users02.json.gz")
+usersDF2 = spark.read.option("multiline", "true").json("abfss://demodata@ghadlskrc.dfs.core.windows.net/sparkhol/json-data/users02.json.gz")
 usersDF2.write.mode("append").saveAsTable("users") # Managed Overwrite
 
 # COMMAND ----------
@@ -30,7 +31,8 @@ select id, first_name, last_name, email, gender, ip_address from users order by 
 # COMMAND ----------
 
 # 4. 3번 데이터 파일을 읽어 Dataframe 생성 --> 기존 테이블에 추가하기 (append)
-usersDF3 = spark.read.option("multiline", "true").json("/mnt/demodata/sparkhol/json-data/users03.json.gz")
+#usersDF3 = spark.read.option("multiline", "true").json("/mnt/demodata/sparkhol/json-data/users03.json.gz")
+usersDF3 = spark.read.option("multiline", "true").json("abfss://demodata@ghadlskrc.dfs.core.windows.net/sparkhol/json-data/users03.json.gz")
 usersDF3.write.mode("append").saveAsTable("users") # Managed Overwrite
 
 # COMMAND ----------
