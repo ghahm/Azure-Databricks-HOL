@@ -26,7 +26,7 @@ select id, first_name, last_name, email, gender, ip_address from delta_df_users 
 # COMMAND ----------
 
 %sql
-select id, first_name, last_name, email, gender, ip_address from delta.`/mnt/demodata/delta/users` order by id asc
+select id, first_name, last_name, email, gender, ip_address from delta.`abfss://demodata@ghadlskrc.dfs.core.windows.net/delta/users` order by id asc
 
 # COMMAND ----------
 
